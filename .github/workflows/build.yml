@@ -1,0 +1,36 @@
+name: Build V1 Mod 2.0
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: v1mod-2.0/v1mod
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+      - name: Set up Java 21
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '8.10.2'
+      - name: Build mod
+        run: gradle --no-daemon clean build
+      - name: Upload mod JAR
+        uses: actions/upload-artifact@v4
+        with:
+          name: v1mod-2.0.0-jar
+          path: v1mod-2.0/build/libs/*.jar
+          if-no-files-found: error
