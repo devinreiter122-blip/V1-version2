@@ -1,0 +1,1 @@
+{"type":"minecraft:crafting_shaped","category":"misc","key":{"A":{"item":"minecraft:amethyst_block"},"O":{"item":"minecraft:obsidian"},"N":{"item":"minecraft:nether_star"}},"pattern":["AOA","ONO","AOA"],"result":{"id":"v1mod:v1_block","count":1}}

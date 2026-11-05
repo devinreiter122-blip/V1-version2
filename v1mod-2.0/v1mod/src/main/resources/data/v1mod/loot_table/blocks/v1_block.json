@@ -1,0 +1,1 @@
+{"type":"minecraft:block","pools":[{"rolls":1.0,"bonus_rolls":0.0,"entries":[{"type":"minecraft:item","name":"v1mod:v1_block"}],"conditions":[{"condition":"minecraft:survives_explosion"}]}],"random_sequence":"v1mod:blocks/v1_block"}
